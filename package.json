@@ -1,0 +1,20 @@
+{
+  "name": "test-build-time",
+  "version": "1.0.0",
+  "dependencies": {
+    "@dojo/framework": "^4.0.0",
+    "@dojo/themes": "^4.0.0",
+    "@dojo/widgets": "^4.0.0",
+    "hast-to-hyperscript": "^6.0.0",
+    "remark-parse": "^6.0.3",
+    "remark-rehype": "^4.0.0",
+    "tslib": "~1.8.1",
+    "unified": "^7.0.2"
+  },
+  "devDependencies": {
+    "@dojo/cli-build-app": "^4.0.4",
+    "@dojo/cli-test-intern": "^4.0.0",
+    "@types/node": "~9.6.5",
+    "typescript": "~2.6.1"
+  }
+}
