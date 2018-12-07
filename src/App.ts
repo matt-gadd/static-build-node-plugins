@@ -22,9 +22,9 @@ export default class App extends WidgetBase {
 					});
 				}
 			}),
-			w(Outlet, { id: 'tutorial', renderer: ({ params }: any) => {
+			w(Outlet, { key: 'tutorial', id: 'tutorial', renderer: ({ params }: any) => {
 				const { name } = params;
-				return w(Markdown, { path: `./src/${name}.md` });
+				return w(Markdown, { key: name, path: `./src/${name}.md` });
 			}})
 		]);
 	}
