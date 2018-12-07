@@ -5,14 +5,14 @@ import Markdown from './Markdown';
 import * as css from './App.m.css';
 
 export default class App extends WidgetBase {
+	private _paths = [
+		'./src/foo.md',
+		'./src/bar.md',
+		'./src/qux.md'
+	];
 	protected render() {
-		console.log('App');
 		return v('div', { classes: [css.root] }, [
-			v('div', [
-				v('div', [ 'hello' ]),
-				w(Markdown, { path: './src/foo.md' }),
-				w(Markdown, { path: './src/bar.md' })
-			])
+			v('div', this._paths.map((path) => w(Markdown, { path })))
 		]);
 	}
 }
