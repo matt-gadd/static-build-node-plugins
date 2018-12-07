@@ -30,8 +30,10 @@ export default class Markdown extends WidgetBase<{ path: string }> {
 	protected render() {
 		const { path } = this.properties;
 		if (has('build-time-render')) {
-			const convert = require('./@build/markdown').default;
-			this.cache.set(path, convert(path));
+			this.cache.set(path, async () => {
+				const md = await import('./@build/markdown');
+				return md.default(path);
+			});
 		}
 		const text = this.cache.get(path);
 		return v('div', [ text ]);
