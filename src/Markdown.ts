@@ -15,7 +15,9 @@ class Cache {
 	}
 	set(name: string, value: any): void {
 		if (typeof value.then === 'function') {
-			value.then((result: any) => this.set(name, result));
+			value.then((result: any) => {
+				this.set(name, result)
+			});
 		}
 		else {
 			global.__cache[name] = value;
@@ -29,11 +31,13 @@ export default class Markdown extends WidgetBase<{ path: string }> {
 
 	protected render() {
 		const { path } = this.properties;
+		console.log(has('build-time-render'));
 		if (has('build-time-render')) {
-			this.cache.set(path, async () => {
+			const func = async () => {
 				const md = await import('./@build/markdown');
 				return md.default(path);
-			});
+			}
+			this.cache.set(path, func());
 		}
 		const text = this.cache.get(path);
 		return v('div', [ text ]);
