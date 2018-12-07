@@ -8,7 +8,7 @@ export default class App extends WidgetBase {
 	protected render() {
 		return v('div', { classes: [css.root] }, [
 			v('div', [
-				w(Markdown, { path: './src/foo.md' }),
+				w(Markdown, { path: './src/foo.md' })
 			])
 		]);
 	}

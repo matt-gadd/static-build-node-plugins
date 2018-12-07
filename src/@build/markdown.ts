@@ -15,7 +15,7 @@ const pragma = (...args: any[]) => {
 }
 
 
-export const convert = (path: string) => {
+export default (path: string) => {
 	const content = fs.readFileSync(path, 'utf-8');
 	const pipeline = unified()
 		.use(parse)

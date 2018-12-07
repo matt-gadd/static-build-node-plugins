@@ -6,6 +6,8 @@
     "@dojo/themes": "^4.0.0",
     "@dojo/widgets": "^4.0.0",
     "hast-to-hyperscript": "^6.0.0",
+    "postcss-custom-properties": "^8.0.9",
+    "postcss-preset-env": "^6.4.0",
     "remark-parse": "^6.0.3",
     "remark-rehype": "^4.0.0",
     "tslib": "~1.8.1",
