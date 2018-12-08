@@ -14,7 +14,6 @@ const pragma = (...args: any[]) => {
 	return v(...args);
 }
 
-
 export default (path: string) => {
 	const content = fs.readFileSync(path, 'utf-8');
 	const pipeline = unified()

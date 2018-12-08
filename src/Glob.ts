@@ -5,7 +5,7 @@ export default class Glob extends WidgetBase<{ pattern: string, renderer: (resul
 
 	protected render() {
 		if (!this._result) {
-			import('./@build/glob')
+			import('./glob.build')
 				.then(({ default: dl }) => dl(this.properties.pattern))
 				.then((result) => {
 					this._result = this.properties.renderer(result);

@@ -6,7 +6,7 @@ export default class Markdown extends WidgetBase<{ path: string }> {
 
 	protected render() {
 		if (!this._result) {
-			import('./@build/markdown')
+			import('./markdown.build')
 				.then(({ default: md }) => md(this.properties.path))
 				.then((result) => {
 					this._result = result;
