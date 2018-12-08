@@ -12,7 +12,7 @@ export default class App extends WidgetBase {
 	protected render() {
 		return v('div', { classes: [css.root] }, [
 			w(Glob, {
-				pattern: 'src/**/*.md',
+				pattern: 'src/content/*.md',
 				renderer: (paths: string[]) => {
 					return paths.map((path: string) => {
 						path = path.replace(/.*\//, '').replace('.md', '');
@@ -24,7 +24,7 @@ export default class App extends WidgetBase {
 			}),
 			w(Outlet, { key: 'tutorial', id: 'tutorial', renderer: ({ params }: any) => {
 				const { name } = params;
-				return w(Markdown, { key: name, path: `./src/${name}.md` });
+				return w(Markdown, { key: name, path: `./src/content/${name}.md` });
 			}})
 		]);
 	}

@@ -2,7 +2,11 @@
 	"build-app": {
 		"build-time-render": {
 			"root": "app",
-			"paths": [ "tutorial/foo", "tutorial/bar", "tutorial/qux" ]
+			"paths": [
+				"tutorial/01-the-beginning",
+				"tutorial/02-the-middle",
+				"tutorial/03-the-end"
+			]
 		}
 	},
 	"test-intern": {},
