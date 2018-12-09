@@ -7,6 +7,9 @@
 				"tutorial/02-the-middle",
 				"tutorial/03-the-end"
 			]
+		},
+		"bundles": {
+			"foo": [ "src/Glob" ]
 		}
 	},
 	"test-intern": {},
