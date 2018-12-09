@@ -1,18 +1,11 @@
 import WidgetBase from '@dojo/framework/widget-core/WidgetBase';
 import { v } from '@dojo/framework/widget-core/d';
 
-export default class Markdown extends WidgetBase<{ path: string }> {
-	private _result: any;
+import markdown from './markdown.build';
 
+export default class Markdown extends WidgetBase<{ path: string }> {
 	protected render() {
-		if (!this._result) {
-			import('./markdown.build')
-				.then(({ default: md }) => md(this.properties.path))
-				.then((result) => {
-					this._result = result;
-					this.invalidate();
-				});
-		}
-		return v('div', [ this._result ]);
+		const result = markdown(this.properties.path);
+		return v('div', [ result ]);
 	}
 }
