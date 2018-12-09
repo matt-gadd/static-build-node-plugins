@@ -1,5 +1,5 @@
 const glob = require("glob")
 
 export default (pattern: string) => {
-	return Promise.resolve(glob.sync(pattern, {}));
+	return glob.sync(pattern, {});
 }
