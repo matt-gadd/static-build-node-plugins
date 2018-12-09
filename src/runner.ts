@@ -11,10 +11,9 @@ export const runner = (invalidator: any) => {
 
 		runValueMap.set(argsString, null);
 		const result = module(...args);
-
 		if (typeof result.then === 'function') {
 			result.then((result: any) => {
-				runValueMap.set(args, result);
+				runValueMap.set(argsString, result);
 				invalidator();
 			});
 			return null;
